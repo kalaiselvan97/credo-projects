@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-
-        function doZoom(op)
-        {
-            var img = document.getElementById("img");
-           var eHeight = img.style.height;    
-            var eWidth = img.style.width;
-            if (op=="Zoom In") {
-           var nHeight = parseInt(eHeight)+50+"px";
-           var nWidth = parseInt(eWidth)+50+"px";
-           if (parseInt(nHeight)<=500) {
-               img.style.height = nHeight;
+      function doZoom(op) {
+        var img = document.getElementById("img");
+        var eHeight = img.style.height;
+        var eWidth = img.style.width;
+        if (op == "Zoom In") {
+          var nHeight = parseInt(eHeight) + 50 + "px";
+          var nWidth = parseInt(eWidth) + 50 + "px";
+          if (parseInt(nHeight) <= 500) {
+            img.style.height = nHeight;
             img.style.width = nWidth;
-               
-           } else {
-               alert("reached maximum pixels");
-               
-           }
-
-            
-            }
-            if (op=="Zoom Out") {
-           var nHeight = parseInt(eHeight)-50+"px";
-           var nWidth = parseInt(eWidth)-50+"px";
-           if (parseInt(nHeight)>=100) {
-               img.style.height = nHeight;
-            img.style.width = nWidth;
-               
-           } else {
-               alert("reached minimum pixels");
-               
-           }
-            }
+          } else {
+            alert("reached maximum pixels");
+          }
         }
-
+        if (op == "Zoom Out") {
+          var nHeight = parseInt(eHeight) - 50 + "px";
+          var nWidth = parseInt(eWidth) - 50 + "px";
+          if (parseInt(nHeight) >= 100) {
+            img.style.height = nHeight;
+            img.style.width = nWidth;
+          } else {
+            alert("reached minimum pixels");
+          }
+        }
+      }
     </script>
-</head>
-<body>
-    <img src="image.jpeg" id="img" style="height: 200px; width: 200px;"> <br><br>
+  </head>
+  <body>
+    <img src="image.jpeg" id="img" style="height: 200px; width: 200px" />
+    <br /><br />
 
-    <input type="button" value="Zoom In" onclick="doZoom(this.value)"> &nbsp;
-    <input type="button" value="Zoom Out" onclick="doZoom(this.value)"> &nbsp;
-</body>
+    <input type="button" value="Zoom In" onclick="doZoom(this.value)" /> &nbsp;
+    <input type="button" value="Zoom Out" onclick="doZoom(this.value)" /> &nbsp;
+  </body>
 </html>
