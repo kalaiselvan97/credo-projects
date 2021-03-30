@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CALCULATOR</title>
+    <script>
+      function doop(op) {
+        var n1 = document.getElementById("ip1").value;
+        var n2 = document.getElementById("ip2").value;
+        var result;
+        if (isNaN(n1) || isNaN(n2)) {
+          alert("enter the valid number");
+        } else {
+          if (op == "Add") {
+            result = Number(n1) + Number(n2);
+          } else if (op == "Sub") {
+            result = n1 - n2;
+          } else if (op == "Mul") {
+            result = n1 * n2;
+          } else if (op == "Div") {
+            result = n1 / n2;
+          }
+          document.getElementById("res").value = result;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form style="text-align: center">
+      <h1>SIMPLE CALCULATOR</h1>
+      number1:
+      <input type="text" id="ip1" placeholder="input 1" value="" />
+      <br />
+      <br />
+      number2: <input type="text" id="ip2" placeholder="input 2" /> <br />
+      <br />
+
+      <input type="button" value="Add" onclick="doop(this.value)" />
+      &nbsp;&nbsp;
+      <input type="button" value="Sub" onclick="doop(this.value)" />&nbsp;&nbsp;
+      <input type="button" value="Mul" onclick="doop(this.value)" />&nbsp;&nbsp;
+      <input type="button" value="Div" onclick="doop(this.value)" /> <br />
+      <br />
+      result: <input type=" text" id="res" /> <br />
+      <br />
+
+      <input type="reset" value="clear" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var usernames = "gopi, arun, bala, kartik, raja";
+
+      var data = "Name: Gopi, Email: gopi@gmail.com, Phone:322523423";
+
+      function checkUsername(username) {
+        alert(username);
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset style="background-color: blanchedalmond; text-align: center">
+      <h1>1. Username Check with case sensitive</h1>
+
+      <span>gopi, arun, bala, kartik</span> <br /><br />
+
+      Username : <input type="text" onblur="checkUsername(this.value)" />
+      <br /><br />
+
+      <hr />
+
+      <h1>2. Username Check with case Insensitive</h1>
+
+      <span>gopi, arun, bala, kartik</span> <br /><br />
+
+      Username : <input type="text" onblur="checkUsername(this.value)" />
+      <br /><br />
+
+      <hr />
+
+      <h1>3. Pull the data into Form</h1>
+
+      <span>Name: Gopi, Email: gopi@gmail.com, Phone:322523423</span>
+      <br /><br />
+
+      Name: <input type="text" /> <br /><br />
+      Email: <input type="text" /> <br /><br />
+      Phone: <input type="text" /> <br /><br />
+
+      <input type="button" value="Load Data" />
+    </fieldset>
+  </body>
+</html>

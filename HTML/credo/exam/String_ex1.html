@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loadData_case</title>
+    <script>
+      function check(na) {
+        var str = document.getElementById("showname").innerHTML;
+        var strr = document.getElementById("name1").value;
+        var s = str.indexOf(strr);
+        if (s == "-1") {
+          document.getElementById("result1").innerHTML = "Username Available";
+          document.getElementById("result1").style = "color:green";
+        } else {
+          document.getElementById("result1").innerHTML =
+            "Username not Available,Try Another name";
+          document.getElementById("result1").style = "color:red";
+        }
+      }
+      function check2(na) {
+        var str1 = document.getElementById("showname").innerHTML;
+        var strr1 = document.getElementById("name2").value;
+        var s1 = str1.search(new RegExp(strr1, "i"));
+        if (s1 == "-1") {
+          document.getElementById("result2").innerHTML =
+            "Username is Available";
+          document.getElementById("result2").style = "color:green";
+        } else {
+          document.getElementById("result2").innerHTML =
+            "Username not Available,Try Another name";
+          document.getElementById("result2").style = "color:red";
+        }
+      }
+      function show() {
+        var s = document.getElementById("namee").innerHTML;
+        var fn1 = s.search("Name:");
+        var fn11 = Number(fn1) + 5;
+        var fl = s.search("Email");
+        var fl1 = Number(fl - 2);
+        var fl2 = s.search("Phone");
+        var fl21 = Number(fl) + 6;
+        var fl22 = Number(fl2) - 2;
+        var l = Number(fl2) + 6;
+
+        var fname = s.slice(fn11, fl1);
+        document.getElementById("namename").value = fname;
+        var emailid = s.slice(fl21, fl22);
+        document.getElementById("emailidenter").value = emailid;
+        var mob = s.slice(l);
+        document.getElementById("mobile").value = mob;
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset
+      style="border: chocolate; background-color: cornsilk; text-align: center"
+    >
+      <h1>1.username check with casesensitive</h1>
+
+      <label id="showname">gopi,arun,kalai,bala</label>
+      <br />
+      <br />
+      <label for="">Username:</label> &nbsp;
+      <input type="text" name="ch" id="name1" onblur="check(this.value)" />
+
+      <span id="result1"></span>
+      <hr />
+      <h1>2.username check with case insensitive</h1>
+
+      <label id="showname">gopi,arun,kalai,bala</label>
+      <br />
+      <br />
+      <label for="">Username:</label> &nbsp;
+      <input type="text" name="ch2" id="name2" onblur="check2(this.value)" />
+
+      <span id="result2"></span>
+      <hr />
+      <h1>3. Pull the data into Form</h1>
+
+      <span id="namee"
+        >Name:gopi hgfhgf, Email:gopi@gmail.com, Phone:944445678866</span
+      >
+      <br /><br />
+
+      Name: <input type="text" id="namename" /> <br /><br />
+      Email: <input type="text" id="emailidenter" /> <br /><br />
+      Phone: <input type="text" id="mobile" /> <br /><br />
+
+      <input
+        type="button"
+        value="Load Data"
+        onclick="show()"
+        style="color: silver; background-color: crimson; text-shadow: slategray"
+      />
+    </fieldset>
+  </body>
+</html>

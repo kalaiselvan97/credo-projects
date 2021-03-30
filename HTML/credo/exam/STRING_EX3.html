@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split NOS.STRING LOWER TRIM</title>
+    <script>
+      function sp() {
+        var num = " ";
+        var str = " ";
+        var a = document.getElementById("data").value;
+        var b = a.split(",");
+        for (let index = 0; index < b.length; index++) {
+          if (isFinite(b[index])) {
+            num += b[index] + " ";
+          } else {
+            str += b[index] + " ";
+          }
+        }
+        document.getElementById("numspan").innerHTML = num;
+        document.getElementById("strspan").innerHTML = str;
+      }
+      function tr() {
+        var m = document.getElementById("mail").value;
+        var tri = m.trim();
+        document.getElementById("mail").value = tri;
+      }
+      function cs() {
+        var c = document.getElementById("case").value;
+        var d = c.toLowerCase();
+        document.getElementById("case").value = d;
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset
+      style="
+        text-align: center;
+        background-color: rgb(223, 171, 108);
+        border-style: groove;
+        border-radius: 0.5cm;
+      "
+    >
+      <h1>1. To Lowercase</h1>
+
+      Username : <input type="text" id="case" onblur="cs()" /> <br /><br />
+
+      <h1>2. Trim</h1>
+
+      Email : <input type="text" id="mail" onblur="tr()" /> <br /><br />
+
+      <h1>Split Nos & Strings</h1>
+
+      Data : <input type="text" id="data" onblur="sp()" /> <br /><br />
+
+      Numbers: <span id="numspan"></span><br /><br />
+
+      String: <span id="strspan"></span> <br /><br />
+    </fieldset>
+  </body>
+</html>
