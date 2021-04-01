@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:rgb(245, 223, 135);">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function toShow(click) {
+            var displaymale=document.getElementById("maleform").style.display.value;
+            var displayfemale=document.getElementById("Femaleform").style.display.value;
+            if (click=="Male") {
+                displaymale="block";
+                displayfemale="none";
+            }
+             if (click=="Female") {
+                displayfemale="block"; 
+                displaymale="none"; }
+                document.getElementById("maleform").style.display=displaymale;
+                document.getElementById("Femaleform").style.display=displayfemale;
+                
+ }
+
+    </script>
+</head>
+<body style="background-color: rgb(228, 165, 107); text-align: center;">
+    email: <input type="text"> <br> <br>
+    mobile: <input type="number"><br><br>
+    <label for="gender" >Gender:</label>
+        <input type="radio" name="gender" id="Male" title="GENDER" onclick="toShow(id)">
+        <label for="Male" title="GENDER" id="Male" >Male</label>
+        <input type="radio" name="gender" id="Female" title="GENDER" onclick="toShow(id)">
+        <label for="Female" title="GENDER">Female</label>
+<fieldset id="maleform" style="display: none; background-color: rgb(139, 235, 235);" >
+    <h3>Male form</h3>
+  
+    MALE-name: <input type="text"> <br> <br>
+    MALE-id: <input type="number"><br><br>
+
+
+</fieldset><fieldset id="Femaleform" style="display: none;background-color: rgb(240, 169, 240);" >
+    <h3>Female form</h3>
+    FEMALE-name: <input type="text"> <br> <br>
+    FEMALE-id: <input type="number"><br><br>
+
+
+</fieldset>
+
+    
+
+</body>
+</html>

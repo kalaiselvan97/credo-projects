@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function toShowLarge(picname) {
+
+            var image= document.getElementById("show");
+       
+            image.src = picname.src;
+                     }
+        </script>
+   
+
+</head>
+<body style="align-items: center;">
+   <div class = "picture">  
+       <div class= "image">
+    <img src="1.jpg" id="pic1" style="height: 100px;" onmouseover="toShowLarge(this)" >&nbsp;
+    <img src="2.jpg" id="pic2" style="height: 100px;" onmouseover="toShowLarge(this)">&nbsp;
+    <img src="3.jpg"id="pic3" style="height: 100px;" onmouseover="toShowLarge(this)">&nbsp;
+    <img src="4.jpg"id="pic4" style="height: 100px;" onmouseover="toShowLarge(this)">&nbsp;
+    <img src="5.jpg"id="pic5" style="height: 100px;"  onmouseover="toShowLarge(this)">&nbsp;
+    <img src="6.jpg"id="pic6" style="height: 100px;"   onmouseover="toShowLarge(this)">&nbsp;
+    <img src="7.jpg"id="pic7" style="height: 100px;" onmouseover="toShowLarge(this)">&nbsp;
+
+</div>
+
+<div class="img-container" class="center">
+
+    <img src="1.jpg" id="show" height="400px">
+<style>
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
+
+</style>
+    
+
+
+</div>
+</div>
+    
+</body>
+
+</html>

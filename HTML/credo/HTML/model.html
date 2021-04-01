@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script>
-      function split() {
-        var s;
-        var arr = document.getElementById("name").value;
-        var t = arr.split(",");
-        t.forEach((element) => {
-          s = t.toString();
-        });
-        for (let index = 0; index < s.length; index++) {
-          const element = s[index];
-          s;
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function call(rec){
+      var img=document.getElementById("pic");
+
+      img.src=rec.src
         }
-        console.log(s[2]);
-        console.log(typeof s);
-      }
-    </script>
-  </head>
-  <body>
-    <h1>split numbers and arrray</h1>
-    <input type="text" onblur="split()" id="name" /> <br /><br />
-    <span id="numspan">numbers:</span> <br /><br />
-    <span id="stringspan">string:</span>
-  </body>
+
+  </script>
+</head>
+<body>
+  <div class= "picture">
+
+    <div class = images>
+     
+  <img src="image.jpeg" id="pic" style="height: 200px;" onmouseover="call(this)" >
+</div>
+
+  <div class="img-container">
+    
+    <img src="" alt="" id="pic">
+
+  </div>
+ </div>
+</body>
 </html>
