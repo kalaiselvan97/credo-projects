@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.largest</title>
+  </head>
+  <script>
+    /*  console.log(max_of_three(1, 0, 1));
+    console.log(max_of_three(0, -10, -20));
+    console.log(max_of_three(1000, 510, 440));*/
+    var arr1 = [1, 0, 1];
+    var arr2 = [0, -10, -20];
+    var arr3 = [1000, 510, 440];
+    var len1 = 0;
+    var len2 = 0;
+    var len3 = 0;
+    var res1, res2, res3;
+    for (var z1 of arr1) {
+      if (len1 < z1) {
+        len1 = z1;
+        res1 = z1;
+      }
+    }
+    for (var z2 of arr2) {
+      if (len2 <= z2) {
+        len2 = z2;
+        res2 = z2;
+      }
+    }
+    for (var z3 of arr3) {
+      if (len3 < z3) {
+        len3 = z3;
+        res3 = z3;
+      }
+    }
+    console.log(res1);
+    console.log(res2);
+    console.log(res3);
+  </script>
+
+  <body></body>
+</html>

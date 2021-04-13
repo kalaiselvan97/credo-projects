@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*Write a program to check whether a specified character exists within the
+2nd to 4th position in a given string.
+Ex:
+console.log(check_char("Python", "y"));
+console.log(check_char("JavaScript", "a"));
+console.log(check_char("Console", "o"));*/
+
+      var v1 = "Python";
+      var v2 = "JavaScript";
+      var v3 = "Console";
+
+      var r1 = v1.includes("y", 1 - 3);
+      var r2 = v2.includes("a", 1 - 3);
+      var r3 = v3.includes("o", 1 - 3);
+
+      console.log(r1, r2, r3);
+    </script>
+  </head>
+  <body></body>
+</html>

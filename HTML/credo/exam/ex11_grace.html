@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRACE_mark</title>
+    <script></script>
+  </head>
+  <body>
+    <h1>1.pass mark</h1>
+    values: <span id="pmark"></span> <br />
+    <br />
+    show pass mark<input
+      type="checkbox"
+      name=""
+      id="cbox"
+      onclick="showpass(this)"
+    />
+    <hr />
+    <h1>2.add grace mark</h1>
+    values : <span id="g"></span> <br />
+    <br />
+    add grace mark<input type="text" id="gbox" onblur="grace(this.value)" />
+    <hr />
+    <h1>3.find large word</h1>
+    <span id="lword"></span> <br />
+    <br />
+    <input type="button" value="find large word" onclick="find()" />
+    <span id="large"></span>
+  </body>
+  <script>
+    var mark_1 = ["90", "20", "30", "40", "55", "60", "7", "80", "92"];
+    document.getElementById("pmark").innerHTML = mark_1;
+    var result1;
+    function showpass(cbox) {
+      result1 = mark_1.filter(pass);
+      function pass(mark) {
+        return mark >= 50;
+      }
+
+      document.getElementById("pmark").innerHTML = result1;
+    }
+
+    // document.getElementById("pmark").innerHTML = cbox.checked ? result1 : mark_1;
+
+    document.getElementById("g").innerHTML = mark_1;
+
+    //  var m=document.getElementById("gbox").value;
+    var result2;
+
+    function grace(gracemark) {
+      result2 = mark_1.map(g);
+      function g(mark_1) {
+        var m =Number(mark_1) + Number(gracemark);
+        if (m >= 100) {
+          m = 100;
+        }
+        return m;
+      }
+      document.getElementById("g").innerHTML = result2;
+    }
+    var value3=["hi","hello","goodbye","bye"];
+    document.getElementById("lword").innerHTML =value3;
+    function find(){
+    var len = 0, bigString;
+    for (var z of value3) {
+        if (len < z.length) {
+            len=z.length;
+            bigString = z;
+        }
+    }
+    document.getElementById("large").innerHTML = bigString;
+    document.getElementById("large").style.color="green";
+}
+   
+    
+  </script>
+</html>

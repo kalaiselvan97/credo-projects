@@ -1,24 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIRROR</title>
+  </head>
 
-        var arr = ["hi", "hello", "test", "good", "morning"];
+  <body>
+    <h1>1.Search Users with For Loop</h1>
+    <b>values:</b>
+    <span id="value_1"></span> <br /><br />
+    <b>Search:</b>
+    <input type="text" id="search_1" onblur="loop1(this.value)" />
+    <span id="showresult_1"></span>
+    <hr />
 
-     // console.log(arr.fill(null, 3));
+    <h1>2.Search Users without For Loop case insensitive</h1>
+    <b>values:</b>
+    <span id="value_2"></span> <br /><br />
+    <b>Search:</b>
+    <input type="text" id="search_2" onblur="loop2(this.value)" />
+    <span id="showresult_2"></span>
+    <hr />
 
-     alert(arr.indexOf("test"));
+    <h1>3.Seperate values</h1>
+    <b>values:</b>
+    <span id="value_3"></span> <br /><br />
+    <button id="sep" onclick="load()">seperate values</button>
+    <br> <br>
+    <div id="strarr" style="display: none">Stringarray:</div> <br>
+    <div id="numarr" style="display: none">numberarray:</div>
+    <hr />
 
-      //   alert(arr.toString());
+    <h1>4.MIRROR EFFECTS</h1>
+    <input type="text" id="mirror" onblur="mirroreff()"/>
+    <span id="mreff"></span>
+  </body>
 
-     console.log(arr.join(""));
-    </script>
-</head>
-<body>
-    
-</body>
+  <script>
+    var val1 = ["kalai", "saba", "muthu"];
+    document.getElementById("value_1").innerHTML = val1;
+
+    function loop1(srchval) {
+      for (var x of val1) {
+        var y = srchval.indexOf(x);
+
+        if (y == 0) {
+          document.getElementById("showresult_1").innerHTML =
+            "username already taken";
+          document.getElementById("showresult_1").style.color = "red";
+          break;
+        } else {
+          document.getElementById("showresult_1").innerHTML =
+            "username available";
+          document.getElementById("showresult_1").style.color = "green";
+        }
+      }
+    }
+    var val2 = ["kalai", "saba", "muthu", "madhu"];
+    document.getElementById("value_2").innerHTML = val2;
+    function loop2(srchval2) {
+      var newval2 = val2.toString();
+      var v = newval2.split(",");
+      var newsrchval2 = srchval2.toLowerCase();
+      var result = v.indexOf(newsrchval2);
+      if (result >= 0) {
+        document.getElementById("showresult_2").innerHTML =
+          "username already taken";
+        document.getElementById("showresult_2").style.color = "red";
+      } else {
+        document.getElementById("showresult_2").innerHTML =
+          "username available";
+        document.getElementById("showresult_2").style.color = "green";
+      }
+    }
+
+    var val3 = ["zebra",
+      "kalai",
+      "8",
+      "saba",
+      "232",
+      "muthu",
+      "3421",
+      "1111",
+    ];
+    document.getElementById("value_3").innerHTML = val3;
+    function load() {
+      var str = [];
+      var num = [];
+
+      for (var n of val3) {
+        if (isFinite(n)) {
+          num.push(n);
+        } else {
+          str.push(n);
+        }
+      }
+      document.getElementById("strarr").style.display = "block";
+
+      document.getElementById("strarr").innerHTML = "StringArray:" + str.sort();
+      document.getElementById("numarr").style.display = "block";
+      document.getElementById("numarr").innerHTML = "NumberArray:" + num.sort(function(a,b){return a-b});
+    }
+
+    function mirroreff(){
+        var m= document.getElementById("mirror").value;
+        var n=[];
+        for (var mir of m) {
+            n.unshift(mir);
+
+        }
+    var str=n.join("");
+      
+        document.getElementById("mreff").innerHTML= str;
+
+    }
+  </script>
 </html>

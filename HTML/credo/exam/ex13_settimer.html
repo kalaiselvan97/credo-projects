@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var i, j;
+      function call() {
+        var dt = new Date().toLocaleTimeString();
+        document.getElementById("time").innerHTML = dt;
+        // document.getElementById("time").style.color = generateRandomColor();
+      }
+
+      function startTimer() {
+        call();
+        i = setInterval(call, 1000);
+        j = setInterval(generateRandomColor, 1000);
+      }
+
+      function stopTimer() {
+        clearInterval(i);
+        clearInterval(j);
+
+        call();
+      }
+      //var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      function generateRandomColor() {
+        var randomColor =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+        document.getElementById("time").style.color = randomColor;
+      }
+    </script>
+    <style>
+      button {
+        color: darkgoldenrod;
+        size: 200cm;
+      }
+      span {
+        font-size: 200%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <fieldset style="text-align: center; background-color: azure">
+      <span id="time"></span> <br /><br />
+
+      <button type="button" onclick="startTimer()">Start Timer</button> &nbsp
+      &nbsp
+      <button type="button" onclick="stopTimer()">Stop Timer</button>
+    </fieldset>
+  </body>
+</html>

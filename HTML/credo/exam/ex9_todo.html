@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINIPROJECT</title>
+    <h1>miniproject</h1>
+  </head>
+  <body>
+      <fieldset>
+    menus: <input type="text" id="menuinput" /> <br /><br />
+
+    <input type="button" value="Push" onclick="addMenus(this.value)" />&nbsp;
+    <input type="button" value="Pop" onclick="addMenus(this.value)" />&nbsp;
+    <input type="button" value="Shift" onclick="addMenus(this.value)" />&nbsp;
+    <input type="button" value="Unshift" onclick="addMenus(this.value)" />&nbsp;
+    <br /><br />
+
+    Search : <input type="text" onkeyup="doSearch(this.value)" id="srch" />
+    <span id="no"></span> <br /><br />
+
+    <div id="res"></div>
+
+    <div id="editform" style="display: none">
+      Edit Menu: <input type="text" id="editmenu" /> <br /><br />
+      <input
+        type="button"
+        value="Update Menu"
+        onclick="updatemenu(this.value)"
+      />
+    </div>
+</fieldset>
+  </body>
+
+  <script>
+    var menus = ["car", "bus", "lorry", "bike"];
+    var indexnum;
+    function listData(arr) {
+      var template = "<ul>";
+
+      for (var i = 0; i < arr.length; i++) {
+        template +=
+          "<li>" +
+          arr[i] +
+          "&nbsp<input type='button' value='Edit' onclick='doedit(" +
+          i +
+          ")'>&nbsp<input type='button' onclick='dodelete(" +
+          i +
+          ")' value='Delete'></li>";
+      }
+      template += "</ul>";
+      document.getElementById("res").innerHTML = template;
+    }
+    listData(menus);
+
+    function addMenus(buttonvalue) {
+      var input = document.getElementById("menuinput").value;
+
+      switch (buttonvalue) {
+        case "Push":
+          menus.push(input);
+          listData(menus);
+          break;
+        case "Pop":
+          menus.pop(input);
+          listData(menus);
+          break;
+        case "Shift":
+          menus.shift(input);
+          listData(menus);
+          break;
+        case "Unshift":
+          menus.unshift(input);
+          listData(menus);
+          break;
+      }
+    }
+    function doedit(index) {
+      indexnum = index;
+      document.getElementById("editform").style.display = "block";
+      document.getElementById("editmenu").value = menus[index];
+    }
+
+    function dodelete(index) {
+      // alert(index);
+      menus.splice(index, 1);
+      listData(menus);
+    }
+    function updatemenu() {
+      document.getElementById("editform").style.display = "none";
+      var edited = document.getElementById("editmenu").value;
+      menus.splice(indexnum, 1, edited);
+      listData(menus);
+    }
+    function doSearch(searchvalue) {
+      var tempArr = [];
+      var newsearch = searchvalue.toLowerCase();
+      for (var x of menus) {
+        if (x.includes(newsearch)) {
+          tempArr.push(x);
+        }
+      }
+      listData(tempArr);
+      console.log(tempArr);
+      if (tempArr == 0) {
+        document.getElementById("no").innerHTML = "No Match Found";
+        document.getElementById("no").style.color = "red";
+      } else {
+        document.getElementById("no").style.display = "none";
+      }
+    }
+  </script>
+</html>
